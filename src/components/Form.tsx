@@ -10,7 +10,7 @@ const [inputValue, setInputValue] = useState({
 
     const handleSubmit = () => {}
 
-    const handleChange = e => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue({
             ...inputValue,
             [e.target.name]: e.target.value
