@@ -1,7 +1,12 @@
 import { useState } from "react";
+import {Sub} from '../components/types';
+
+interface FormState {
+    inputValue: Sub
+}
 
 const Form = () => {
-const [inputValue, setInputValue] = useState({
+const [inputValue, setInputValue] = useState<FormState["inputValue"]>({
     nick: '',
     subMonths: 0,
     avatar: '',

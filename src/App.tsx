@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import List from './components/List';
 import Form from './components/Form';
+import {Sub} from './components/types';
 import './App.css';
 
 const INITIAL_STATE = [
@@ -20,13 +21,6 @@ const INITIAL_STATE = [
 interface AppState {
   subs: Sub[]
   newSubsNumber: number
-}
-
-interface Sub {
-  nick: string
-  avatar: string
-  subMonths: number
-  description?: string
 }
 
 function App() {
