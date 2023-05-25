@@ -1,11 +1,15 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {Sub} from '../components/types';
 
 interface FormState {
     inputValue: Sub
 }
 
-const Form = () => {
+interface FormProps {
+    onNewSub: React.Dispatch<React.SetStateAction<Sub[]>>
+}
+
+const Form = ({onNewSub}: FormProps) => {
 const [inputValue, setInputValue] = useState<FormState["inputValue"]>({
     nick: '',
     subMonths: 0,
@@ -13,7 +17,10 @@ const [inputValue, setInputValue] = useState<FormState["inputValue"]>({
     description: ''
 })
 
-    const handleSubmit = () => {}
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        onNewSub(subs => ([...subs, inputValue]))
+    }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setInputValue({

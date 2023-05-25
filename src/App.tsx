@@ -29,13 +29,13 @@ function App() {
 
   useEffect(() => {
     setSubs(INITIAL_STATE)
-  })
+  }, [])
 
   return (
     <div className="App">
       <h1>Hola Juan</h1>
       <List subs={subs}/>
-      <Form />
+      <Form onNewSub={setSubs}/>
     </div>
   );
 }
