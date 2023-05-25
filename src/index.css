@@ -39,9 +39,11 @@ form {
   flex-direction: column;
 }
 
-form input {
+form input, form textarea {
   border: 1px solid #ccc;
   border-radius: 2px;
   padding: 4px 6px;
   margin: 0 4px;
+  font-family: inherit;
+  margin-bottom: 8px;
 }

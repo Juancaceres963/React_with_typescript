@@ -10,7 +10,7 @@ const [inputValue, setInputValue] = useState({
 
     const handleSubmit = () => {}
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setInputValue({
             ...inputValue,
             [e.target.name]: e.target.value
@@ -23,7 +23,7 @@ const [inputValue, setInputValue] = useState({
                 <input onChange={handleChange} value={inputValue.nick} type='text' name="nick" placeholder="nick" />
                 <input onChange={handleChange} value={inputValue.subMonths}type='number' name="subMonths" placeholder="subMonths" />
                 <input onChange={handleChange} value={inputValue.avatar}type='text' name="avatar" placeholder="avatar" />
-                <input onChange={handleChange} value={inputValue.description}type='text' name="description" placeholder="description" />
+                <textarea onChange={handleChange} value={inputValue.description} name="description" placeholder="description" />
                 <button>Save and sub!</button>
             </form>
         </div>
